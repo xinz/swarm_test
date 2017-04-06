@@ -13,6 +13,7 @@ defmodule SwarmTest.Worker do
   def handle_call({:swarm, :begin_handoff}, _from, name) do
     Logger.info(">>>> begin_handoff <<<<")
     {:reply, {:resume, name}, name}
+    #{:reply, :restart, name}
   end
 
   def handle_cast({:swarm, :end_handoff, name}, name) do

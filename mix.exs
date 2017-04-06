@@ -31,7 +31,8 @@ defmodule SwarmTest.Mixfile do
   defp deps do
     [
       {:libcluster, "~> 2.0"},
-      {:swarm, github: "xinz/swarm"}
+      #{:swarm, github: "xinz/swarm"}
+      {:swarm, "~> 3.0"}
     ]
   end
 
