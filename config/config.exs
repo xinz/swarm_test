@@ -34,9 +34,7 @@ use Mix.Config
 config :libcluster,
   topologies: [
     main: [
-    # The selected clustering strategy. Required.
-    strategy: Cluster.Strategy.Epmd,
-    config: [hosts: [:"app1@#{computer_name}"]],
-    connect: {:net_kernel, :connect, []},
+      strategy: Cluster.Strategy.Epmd,
+      config: [hosts: [:"n1@#{computer_name}", :"n2@#{computer_name}"]],
   ]
 ]

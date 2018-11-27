@@ -4,7 +4,7 @@ defmodule SwarmTest.Mixfile do
   def project do
     [app: :swarm_test,
      version: "0.1.0",
-     elixir: "~> 1.4",
+     elixir: "~> 1.7",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
@@ -30,9 +30,9 @@ defmodule SwarmTest.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:libcluster, "~> 2.0"},
-      #{:swarm, github: "xinz/swarm"}
-      {:swarm, "~> 3.0"}
+      {:libcluster, "~> 3.0"},
+      {:swarm, github: "bitwalker/swarm", ref: "738decb"},
+      {:ex_unit_clustered_case, github: "xinz/ex_unit_clustered_case", only: :test},
     ]
   end
 

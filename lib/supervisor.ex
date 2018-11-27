@@ -1,4 +1,4 @@
-defmodule SwarmTest.Supervisor do
+defmodule SwarmTest.Worker.Supervisor do
   use Supervisor
 
   def start_link() do
@@ -7,7 +7,7 @@ defmodule SwarmTest.Supervisor do
 
   def init(_) do
     children = [
-      worker(SwarmTest.Worker, [], restart: :transient)
+      worker(SwarmTest.Worker, [], restart: :transient),
     ]
     supervise(children, strategy: :simple_one_for_one)
   end
